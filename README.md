@@ -1,24 +1,32 @@
-# LLM Council
+sed on original code by Andrej Karpathy. Enhancements and modifications by UnderPlayer673.
+```markdown
+# 🏛️ LLM Council: Enhanced Edition (by UnderPlayer)
 
 ![llmcouncil](header.jpg)
 
-The idea of this repo is that instead of asking a question to your favorite LLM provider (e.g. OpenAI GPT 5.1, Google Gemini 3.0 Pro, Anthropic Claude Sonnet 4.5, xAI Grok 4, eg.c), you can group them into your "LLM Council". This repo is a simple, local web app that essentially looks like ChatGPT except it uses OpenRouter to send your query to multiple LLMs, it then asks them to review and rank each other's work, and finally a Chairman LLM produces the final response.
+*Based on the original weekend hack by [Andrej Karpathy](https://github.com/karpathy). Heavily modified, optimized, and expanded by UnderPlayer673.*
 
-In a bit more detail, here is what happens when you submit a query:
+## 🚀 What's New in This Enhanced Edition?
+The original project was a brilliant proof-of-concept, but it relied on expensive, premium APIs. I completely overhauled the architecture to make it robust, free-tier friendly, and localized:
 
-1. **Stage 1: First opinions**. The user query is given to all LLMs individually, and the responses are collected. The individual responses are shown in a "tab view", so that the user can inspect them all one by one.
-2. **Stage 2: Review**. Each individual LLM is given the responses of the other LLMs. Under the hood, the LLM identities are anonymized so that the LLM can't play favorites when judging their outputs. The LLM is asked to rank them in accuracy and insight.
-3. **Stage 3: Final response**. The designated Chairman of the LLM Council takes all of the model's responses and compiles them into a single final answer that is presented to the user.
+* **⛓️ Dynamic Failover Chains:** Instead of single models, the Council uses "Teams" (Elite, Pro, Support). If a model hits a rate limit or API error, the system automatically falls back to the next available model in the chain.
+* **💸 Free-Tier Optimization:** Fully integrated with free APIs via OpenRouter, Cerebras, and Google Gemini. You can run a massive AI council with a $0 budget.
+* **🇷🇺 RU Localization & System Prompts:** Custom system prompts designed specifically for Russian-speaking users.
+* **🎨 UI/UX Overhaul:** A redesigned, modern React interface with built-in settings, themes, and input debouncing (50ms) to prevent lag during fast typing.
+* **⏱️ Strict Timeouts & Token Budgeting:** Custom logic to prevent endless thinking and context window overflow.
 
-## Vibe Code Alert
+---
 
-This project was 99% vibe coded as a fun Saturday hack because I wanted to explore and evaluate a number of LLMs side by side in the process of [reading books together with LLMs](https://x.com/karpathy/status/1990577951671509438). It's nice and useful to see multiple responses side by side, and also the cross-opinions of all LLMs on each other's outputs. I'm not going to support it in any way, it's provided here as is for other people's inspiration and I don't intend to improve it. Code is ephemeral now and libraries are over, ask your LLM to change it in whatever way you like.
+## 🧠 The Core Concept (How it works)
+Instead of asking a question to a single LLM, you group them into an "LLM Council". The app sends your query to multiple LLMs, asks them to review and rank each other's work, and finally, a Chairman LLM produces the final response.
 
-## Setup
+1. **Stage 1: First opinions**. The user query is given to all LLM Teams in parallel. The system uses failover logic to ensure every team provides an answer.
+2. **Stage 2: Blind Review**. Each LLM is given the anonymized responses of the other LLMs (Response A, Response B, etc.). They evaluate and rank them to prevent brand bias.
+3. **Stage 3: Final Synthesis**. The designated Chairman takes all responses and evaluations, then compiles them into a single, perfect final answer.
+
+## 🛠️ Setup & Installation
 
 ### 1. Install Dependencies
-
-The project uses [uv](https://docs.astral.sh/uv/) for project management.
 
 **Backend:**
 ```bash
@@ -32,56 +40,37 @@ npm install
 cd ..
 ```
 
-### 2. Configure API Key
+### 2. Configure API Keys
+Create a `.env` file in the project root. *Note: You can use free models, but you still need to provide your own API keys (set to `null` in the code for security).*
 
-Create a `.env` file in the project root:
-
-```bash
+```env
 OPENROUTER_API_KEY=sk-or-v1-...
+GOOGLE_API_KEY=AIzaSy...
+CEREBRAS_API_KEY=csk-...
 ```
 
-Get your API key at [openrouter.ai](https://openrouter.ai/). Make sure to purchase the credits you need, or sign up for automatic top up.
+### 3. Run the Application
 
-### 3. Configure Models (Optional)
-
-Edit `backend/config.py` to customize the council:
-
-```python
-COUNCIL_MODELS = [
-    "openai/gpt-5.1",
-    "google/gemini-3-pro-preview",
-    "anthropic/claude-sonnet-4.5",
-    "x-ai/grok-4",
-]
-
-CHAIRMAN_MODEL = "google/gemini-3-pro-preview"
-```
-
-## Running the Application
-
-**Option 1: Use the start script**
-```bash
-./start.sh
-```
-
-**Option 2: Run manually**
-
-Terminal 1 (Backend):
+**Terminal 1 (Backend):**
 ```bash
 uv run python -m backend.main
 ```
 
-Terminal 2 (Frontend):
+**Terminal 2 (Frontend):**
 ```bash
 cd frontend
 npm run dev
 ```
+Then open `http://localhost:5173` in your browser.
+Or in the project root directory you can run the command:
+```bash
+.\start.ps1
+```
 
-Then open http://localhost:5173 in your browser.
+## 💻 Tech Stack
+* **Backend:** FastAPI, async httpx (OpenRouter, Google, Cerebras)
+* **Frontend:** React + Vite, TailwindCSS, SSE Streaming
+* **Architecture:** Multi-Agent Consensus with Fallback/Failover routing.
 
-## Tech Stack
-
-- **Backend:** FastAPI (Python 3.10+), async httpx, OpenRouter API
-- **Frontend:** React + Vite, react-markdown for rendering
-- **Storage:** JSON files in `data/conversations/`
-- **Package Management:** uv for Python, npm for JavaScript
+---
+*Original Vibe Code by Andrej Karpathy. Enhanced Engineering by UnderPlayer673.*
