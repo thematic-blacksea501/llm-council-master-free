@@ -1,4 +1,3 @@
-sed on original code by Andrej Karpathy. Enhancements and modifications by UnderPlayer673.
 ```markdown
 # 🏛️ LLM Council: Enhanced Edition (by UnderPlayer)
 
