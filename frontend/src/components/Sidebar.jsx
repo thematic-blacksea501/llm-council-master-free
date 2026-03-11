@@ -31,6 +31,16 @@ export default function Sidebar({
     }
   };
 
+  const handleApiKeyChange = (provider, value) => {
+    setSettings({
+      ...settings,
+      apiKeys: {
+        ...(settings.apiKeys || {}),
+        [provider]: value,
+      },
+    });
+  };
+
   const startEditing = (e, conv) => {
     e.stopPropagation();
     setEditingId(conv.id);
@@ -165,6 +175,39 @@ export default function Sidebar({
 
         {isAdvancedOpen && (
           <div className="advanced-settings-panel">
+            <div className="setting-item-col">
+              <label>{t.api_keys}</label>
+              <div className="api-keys-grid">
+                <input
+                  className="settings-input"
+                  type="password"
+                  value={settings.apiKeys?.openrouter || ''}
+                  onChange={(e) => handleApiKeyChange('openrouter', e.target.value)}
+                  placeholder={t.openrouter_key}
+                  autoComplete="off"
+                  spellCheck="false"
+                />
+                <input
+                  className="settings-input"
+                  type="password"
+                  value={settings.apiKeys?.google || ''}
+                  onChange={(e) => handleApiKeyChange('google', e.target.value)}
+                  placeholder={t.google_key}
+                  autoComplete="off"
+                  spellCheck="false"
+                />
+                <input
+                  className="settings-input"
+                  type="password"
+                  value={settings.apiKeys?.cerebras || ''}
+                  onChange={(e) => handleApiKeyChange('cerebras', e.target.value)}
+                  placeholder={t.cerebras_key}
+                  autoComplete="off"
+                  spellCheck="false"
+                />
+              </div>
+            </div>
+
             <div className="setting-item-col">
               <label>{t.chairman_selection}</label>
               <select

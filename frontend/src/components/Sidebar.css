@@ -228,6 +228,26 @@
   font-size: 13px;
 }
 
+.settings-input {
+  width: 100%;
+  background: var(--bg-secondary);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  padding: 10px 12px;
+  border-radius: 8px;
+  outline: none;
+  font-size: 13px;
+}
+
+.settings-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.api-keys-grid {
+  display: grid;
+  gap: 10px;
+}
+
 .advanced-settings-panel input[type="range"] {
   width: 100%;
   accent-color: var(--accent);
